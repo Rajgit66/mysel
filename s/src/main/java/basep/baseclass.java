@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 
@@ -13,10 +14,14 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import lombok.extern.log4j.Log4j;
 
@@ -30,11 +35,11 @@ public class baseclass
 	public static WebDriver driver ;
 	//public static Logger log;
 	
-    public static void main( String[] args ) throws InterruptedException, IOException
+    public static void open() throws InterruptedException, IOException
     
   
     {
-    	excel1();
+    	
      	System.out.println( "Hello World!" );
        // System.setProperty("log4j.configurationFile","C://Users//ADMIN//eclipse-workspace//s/target/log4j2.xml");
 
@@ -47,17 +52,9 @@ public class baseclass
        // log.info("chrome maximized");
         Thread.sleep(3000);
 
-        driver.navigate().to("https://www.ajio.com/");
+        driver.navigate().to("https://www.channelnewsasia.com/");
        
        // Screenshot();
-      // log.info("myntra opened");
-        driver.findElement(By.name("searchVal")).click();
-        driver.findElement(By.name("searchVal")).sendKeys("loafers");
-        driver.findElement(By.name("searchVal")).submit();
-        //Screenshot();
-        
-
-       
         }
     	public static void Screenshot() {
     		 try {
@@ -75,13 +72,7 @@ public class baseclass
         
     		
     }
-    	public static void excel1() throws IOException 
-		{
-			
-    		
-
-			
-			}
+    	
  		}
     
 
