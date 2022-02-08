@@ -43,7 +43,7 @@ public class exce {
 	            for(int j=0;j<cellcount;j++){
 	                System.out.print(sheet.getRow(i).getCell(j).getStringCellValue() +",");
 	            }
-	            System.out.println("g");
+	            System.out.println("dg");
 	        }
 	    }
 	}
