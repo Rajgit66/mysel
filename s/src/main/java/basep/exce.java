@@ -38,7 +38,7 @@ public class exce {
 	            int cellcount=sheet.getRow(i).getLastCellNum();
 	            
 	            //iterate over each cell to print its value
-	            System.out.println("Row"+ i+" data is :");
+	            System.out.println("Row"+ i+" data  is :");
 	            
 	            for(int j=0;j<cellcount;j++){
 	                System.out.print(sheet.getRow(i).getCell(j).getStringCellValue() +",");
