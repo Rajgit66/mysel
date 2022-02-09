@@ -45,7 +45,7 @@ public class baseclass
 
         System.setProperty("webdriver.chrome.driver", "C://Users//ADMIN//eclipse-workspace//s//chromedriver.exe");
         driver = new ChromeDriver();
-        System.out.println( "Hello World2" );
+        System.out.println( "Hello World2-manjula" );
 
        //log.info("chrome opened");
         driver.manage().window().maximize();
