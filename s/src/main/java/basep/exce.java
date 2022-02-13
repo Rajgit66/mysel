@@ -4,46 +4,45 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class exce {
 
-	
-	public static void main(String[] args) throws IOException {
-		
-		
+				public static FileInputStream fis;
+				public static XSSFWorkbook wb;
+				public static XSSFSheet sheet;
+				public static XSSFRow row;
+				public static XSSFCell cell;
 
-		
-		 File file =    new File("C:\\files\\Exc.xlsx");
 
-	        //Create an object of FileInputStream class to read excel file
-	        FileInputStream inputStream = new FileInputStream(file);
+				public static void main(String[] args) throws IOException 
+				{
+			        // To get value of specfic row and column from excel sheet
+					String Value=getCellData(0,0);
+					System.out.println("Value in excel file is "+Value);
 
-	        //creating workbook instance that refers to .xls file
-	        XSSFWorkbook wb =new XSSFWorkbook(inputStream);
+				}
 
-	        //creating a Sheet object
-	        XSSFSheet sheet=wb.getSheet("h");
-	        
-	        //get all rows in the sheet
-	        int rowCount=sheet.getLastRowNum()-sheet.getFirstRowNum();
-	        
-	        //iterate over all the row to print the data present in each cell.
-	        for(int i=0;i<=rowCount;i++){
-	            
-	            //get cell count in a row
-	            int cellcount=sheet.getRow(i).getLastCellNum();
-	            
-	            //iterate over each cell to print its value
-	            System.out.println("Row"+ i+" data  is :");
-	            
-	            for(int j=0;j<cellcount;j++){
-	                System.out.print(sheet.getRow(i).getCell(j).getStringCellValue() +",");
-	            }
-	            System.out.println("dg");
-	        }
-	    }
-	}
+
+				public static String getCellData(int rownum,int colnum) throws IOException
+				{
+					// For Reading Data from excel file
+					fis=new FileInputStream("C:\\filess\\Exc.xlsx");
+					wb=new XSSFWorkbook(fis);
+					sheet=wb.getSheet("Demo"); //Demo is the name of sheet in excel file
+					row=sheet.getRow(rownum);
+					cell=row.getCell(colnum);
+					cell.getStringCellValue();
+					fis.close();
+					return cell.getStringCellValue();
+
+				}
+
+			}
