@@ -21,7 +21,7 @@ public class scenario1 extends baseclass {
 		WebElement headline1 = driver.findElement(By.partialLinkText("Headline"));
 		String text1 = headline1.getText();
 		
-		String actual1 ="Half a million";
+		String actual1 ="Half a v million";
 		actual1.length();
 		
 		if(text1.equalsIgnoreCase(actual1))
